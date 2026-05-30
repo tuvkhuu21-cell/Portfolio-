@@ -31,7 +31,7 @@ function getInitialTheme() {
   const saved = localStorage.getItem('theme')
   if (saved === 'dark' || saved === 'light') return saved
 
-  return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  return 'dark'
 }
 
 function getInitialLanguage(): Language {
