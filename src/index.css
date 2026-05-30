@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+
+  --app-bg: #050b1a;
+  --text: rgba(248, 250, 252, 0.95);
+  --text-muted: rgba(226, 232, 240, 0.75);
+  --border: rgba(148, 163, 184, 0.18);
+
+  --glass: rgba(2, 6, 23, 0.25);
+  --glass-strong: rgba(2, 6, 23, 0.35);
+  --glass-soft: rgba(2, 6, 23, 0.2);
+
+  --scrollbar-thumb: rgba(148, 163, 184, 0.35);
+  --scrollbar-track: rgba(2, 6, 23, 0.15);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --app-bg: #eaf1ff;
+  --text: rgba(20, 30, 55, 0.92);
+  --text-muted: rgba(54, 66, 94, 0.82);
+  --border: rgba(148, 163, 184, 0.32);
+
+  --glass: rgba(233, 242, 255, 0.72);
+  --glass-strong: rgba(227, 238, 255, 0.82);
+  --glass-soft: rgba(238, 245, 255, 0.62);
+
+  --scrollbar-thumb: rgba(51, 65, 85, 0.28);
+  --scrollbar-track: rgba(2, 6, 23, 0.08);
+}
+
+:root[data-theme='light'] [class*='text-slate-'],
+:root[data-theme='light'] [class*='text-gray-'],
+:root[data-theme='light'] [class*='text-zinc-'],
+:root[data-theme='light'] [class*='text-neutral-'],
+:root[data-theme='light'] [class*='text-stone-'] {
+  color: var(--text) !important;
+}
+
+:root[data-theme='light'] [class*='text-emerald-'],
+:root[data-theme='light'] [class*='text-green-'],
+:root[data-theme='light'] [class*='text-rose-'],
+:root[data-theme='light'] [class*='text-red-'],
+:root[data-theme='light'] [class*='text-pink-'],
+:root[data-theme='light'] [class*='text-purple-'],
+:root[data-theme='light'] [class*='text-indigo-'],
+:root[data-theme='light'] [class*='text-blue-'],
+:root[data-theme='light'] [class*='text-sky-'],
+:root[data-theme='light'] [class*='text-cyan-'],
+:root[data-theme='light'] [class*='text-teal-'],
+:root[data-theme='light'] [class*='text-amber-'],
+:root[data-theme='light'] [class*='text-yellow-'],
+:root[data-theme='light'] [class*='text-orange-'] {
+  color: var(--text) !important;
+}
+
+:root[data-theme='light'] [class*='bg-slate-950'],
+:root[data-theme='light'] [class*='bg-slate-900'],
+:root[data-theme='light'] [class*='bg-slate-800'] {
+  background-color: var(--glass) !important;
+}
+
+:root[data-theme='light'] [class*='bg-slate-950/'],
+:root[data-theme='light'] [class*='bg-slate-900/'],
+:root[data-theme='light'] [class*='bg-slate-800/'] {
+  background-color: var(--glass) !important;
+}
+
+:root[data-theme='light'] [class*='border-slate-500'],
+:root[data-theme='light'] [class*='border-slate-400'],
+:root[data-theme='light'] [class*='border-slate-300'] {
+  border-color: var(--border) !important;
+}
+
+:root[data-theme='light'] [class*='border-slate-500/'],
+:root[data-theme='light'] [class*='border-slate-400/'],
+:root[data-theme='light'] [class*='border-slate-300/'] {
+  border-color: var(--border) !important;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+@keyframes texttype-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.texttype-cursor {
+  animation-name: texttype-blink;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.proj-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid var(--scrollbar-thumb);
+  background: var(--glass);
+  display: inline-grid;
+  place-content: center;
+}
+
+.proj-checkbox:hover {
+  border-color: rgba(226, 232, 240, 0.45);
+}
+
+.proj-checkbox:checked {
+  background: rgba(148, 163, 184, 0.14);
+  border-color: rgba(226, 232, 240, 0.55);
+}
+
+.proj-checkbox:checked::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: rgba(248, 250, 252, 0.92);
+  clip-path: polygon(14% 53%, 0 67%, 38% 100%, 100% 18%, 84% 6%, 37% 72%);
+}
